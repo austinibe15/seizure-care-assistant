@@ -18,7 +18,7 @@ body {
 
 /* PHONE */
 .phone-frame {
-  width: 380px; /* slightly smaller to fit more on screen */
+  width: 360px; /* slightly smaller to fit more on screen */
   height: 720px; /* slightly shorter */
   background: #000;
   border-radius: 40px;
