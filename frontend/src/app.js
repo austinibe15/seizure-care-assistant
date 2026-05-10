@@ -121,7 +121,7 @@ async function sendMessage(text) {
   updateChart();
 
   try {
-    const res = await fetch("http://localhost:4000/agent", {
+    const res = await fetch("https://neurocare-ai.onrender.com/agent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text })
