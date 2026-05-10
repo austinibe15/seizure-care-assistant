@@ -1,143 +1,479 @@
-<<<<<<< HEAD
-# Sample Hardhat 3 Beta Project (`node:test` and `viem`)
+# 🧠 NeuroCare AI
+### AI-Powered Emergency Monitoring & On-Chain Health Event Logging
 
-This project showcases a Hardhat 3 Beta project using the native Node.js test runner (`node:test`) and the `viem` library for Ethereum interactions.
+NeuroCare AI is a futuristic AI healthcare assistant built for hackathon innovation challenges focused on AI + Web3 integration.
 
-To learn more about the Hardhat 3 Beta, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3 Beta](https://hardhat.org/hardhat3-beta-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+The platform combines:
 
-## Project Overview
+- 🎤 Voice-based medical event logging
+- 🤖 AI-powered health severity analysis
+- 🚨 Emergency alert simulation with siren activation
+- 📍 Live GPS emergency tracking
+- 📊 Real-time analytics dashboard
+- 🔗 Blockchain-ready health event logging
+- 👛 MetaMask wallet connectivity
+- 🌐 Mantle Testnet deployment support
+- 📦 IPFS / CID event simulation
+- 💬 Real-time AI chat interface
+- 📱 Futuristic mobile-first UI
 
-This example project includes:
+---
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using [`node:test`](nodejs.org/api/test.html), the new Node.js native test runner, and [`viem`](https://viem.sh/).
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+# 🚀 Live Vision
 
-## Usage
+NeuroCare AI demonstrates how AI agents and blockchain infrastructure can improve emergency healthcare response systems.
 
-### Running Tests
+The goal is to create:
 
-To run all the tests in the project, execute the following command:
+> A decentralized AI-powered emergency healthcare companion capable of logging medical events, analyzing severity, triggering emergency workflows, and securely storing health events on-chain.
 
-```shell
-npx hardhat test
+---
+
+# 🏆 Hackathon Track Alignment
+
+This project aligns strongly with:
+
+## ✅ Agentic Economy Track
+### RealClaw Real-Life Expansion
+
+Use Cases:
+- Health data management
+- AI-driven emergency response
+- On-chain healthcare logging
+- Real-world AI assistant systems
+
+---
+
+# 🧩 Core Features
+
+## 🎤 Voice Logging
+Users can describe medical conditions using speech recognition.
+
+Example:
+- “I had a seizure and collapsed”
+- “I feel dizzy and weak”
+
+Technology:
+- Web Speech API
+
+---
+
+## 🤖 AI Health Insights
+The system analyzes user medical logs and classifies severity levels.
+
+Severity Types:
+- 🟢 Low
+- 🟠 Moderate
+- 🔴 Critical
+
+AI performs:
+- Symptom interpretation
+- Risk scoring
+- Emergency classification
+
+---
+
+## 🚨 Emergency Alert Simulation
+When seizure-related keywords are detected:
+- Emergency siren activates
+- UI enters alert mode
+- Caregiver alert simulation begins
+- GPS coordinates are generated
+
+---
+
+## 📍 Live GPS Tracking
+The platform simulates live patient location tracking during emergencies.
+
+Example:
+- Lagos emergency coordinates
+- Real-time emergency response workflow
+
+---
+
+## 📊 Analytics Dashboard
+Real-time dashboard updates:
+- Seizure count
+- Medication logs
+- Symptom tracking
+- Alert tracking
+- Dynamic risk score
+
+Includes:
+- Live Chart.js visualization
+
+---
+
+## 🔗 Blockchain Event Logging
+Health events can be connected to:
+- Mantle Testnet
+- Smart contracts
+- MetaMask wallet interactions
+
+Simulated:
+- Transaction hashes
+- IPFS CID references
+
+---
+
+## 👛 MetaMask Wallet Integration
+Users can connect wallets directly from the UI.
+
+Capabilities:
+- Wallet authentication
+- On-chain interaction
+- Future transaction signing
+
+---
+
+## 💬 AI Chat Experience
+A futuristic medical assistant chat interface enables:
+- Conversational event logging
+- Real-time responses
+- AI workflow simulation
+
+---
+
+# 🧱 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript |
+| Charts | Chart.js |
+| AI Backend | Node.js + Express |
+| AI SDK | Google Generative AI |
+| Blockchain | Mantle Testnet |
+| Wallet | MetaMask |
+| Storage Simulation | IPFS CID simulation |
+| Voice Recognition | Web Speech API |
+| Deployment | Netlify |
+| Version Control | Git + GitHub |
+
+---
+
+# 🏗️ Project Architecture
+
+```text
+Frontend UI
+   ↓
+Voice / Text Input
+   ↓
+AI Severity Analysis
+   ↓
+Dashboard + Emergency Workflow
+   ↓
+Blockchain Event Logging
+   ↓
+Mantle Testnet + MetaMask
 ```
 
-You can also selectively run the Solidity or `node:test` tests:
+---
 
-```shell
-npx hardhat test solidity
-npx hardhat test nodejs
+# ⚡ How I Built This Project
+
+The project started as a simple emergency healthcare logging interface.
+
+The vision evolved into:
+
+> An AI-powered decentralized healthcare monitoring system with real-time emergency workflows.
+
+Development stages included:
+
+1. Building the futuristic mobile UI
+2. Creating the analytics dashboard
+3. Adding voice recognition
+4. Integrating AI health analysis
+5. Adding emergency workflows
+6. Connecting MetaMask wallet
+7. Simulating blockchain logging
+8. Preparing Mantle deployment compatibility
+9. Optimizing for hackathon demo presentation
+
+---
+
+# 🧠 AI Workflow Logic
+
+The AI system performs keyword-based severity analysis.
+
+Example Logic:
+
+```js
+if (message.includes("seizure")) {
+   severity = "Critical";
+}
 ```
 
-### Make a deployment to Sepolia
+Triggers:
+- Emergency siren
+- Risk score increase
+- GPS generation
+- Alert workflow
+- Emergency dashboard updates
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+---
 
-To run the deployment to a local chain:
+# 🔐 Security Considerations
 
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
+## ✅ Environment Variables
+
+Sensitive API keys are protected using `.env`.
+
+Example:
+
+```env
+GEMINI_API_KEY=your_api_key
 ```
 
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
+---
 
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
+## ✅ `.gitignore`
 
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
+The following are excluded from GitHub:
 
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
+```gitignore
+node_modules
+.env
+dist
 ```
 
-After setting the variable, you can run the deployment with the Sepolia network:
+---
 
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
+## ✅ Wallet Security
+
+The app:
+- Never stores private keys
+- Uses MetaMask authentication
+- Only requests wallet connection permission
+
+---
+
+## ✅ Frontend Safety
+
+The frontend:
+- Contains no embedded secret keys
+- Uses public wallet-based authentication only
+
+---
+
+# ⚔️ Challenges Faced & Solutions
+
+## 1️⃣ Gemini API Model Errors
+
+### Problem
+The Gemini model versions initially used returned:
+
+```text
+404 Model Not Found
 ```
-=======
-NeuroCare AI – Emergency Monitoring & AI Health Insights
 
-NeuroCare AI is a real-time health monitoring dashboard that leverages AI to track seizure events, medication adherence, and symptoms. Integrated with blockchain (Mantle Testnet) and MetaMask, the platform demonstrates AI × Web3 capabilities for hackathons and RWA/Agentic tracks.
+### Solution
+Updated the AI model configuration and verified supported model endpoints.
 
-Project Overview
-NeuroCare AI is designed for hackathon submission, featuring:
+---
 
-Real-time AI health insights – Automatically analyzes messages and symptoms.
+## 2️⃣ NPM Installation & Cache Issues
 
-Voice logging – Speak events instead of typing.
+### Problem
+Package installations failed due to:
+- corrupted npm cache
+- dependency conflicts
 
-Dashboard & Analytics – Tracks seizures, symptoms, medication, alerts, and risk scores.
+### Solution
 
-Emergency Simulation – Siren and alerts on critical events.
+Used:
 
-NeuroCare AI – Emergency Monitoring & AI Health Insights
+```bash
+npm cache clean --force
+npm install --legacy-peer-deps
+```
 
-NeuroCare AI is a real-time health monitoring dashboard that leverages AI to track seizure events, medication adherence, and symptoms. Integrated with blockchain (Mantle Testnet) and MetaMask, the platform demonstrates AI × Web3 capabilities for hackathons and RWA/Agentic tracks.
+Also isolated backend dependencies properly.
 
-Project Overview
-NeuroCare AI is designed for hackathon submission, featuring:
+---
 
-Real-time AI health insights – Automatically analyzes messages and symptoms.
+## 3️⃣ Free Tier API Quota Errors
 
-Voice logging – Speak events instead of typing.
+### Problem
 
-Dashboard & Analytics – Tracks seizures, symptoms, medication, alerts, and risk scores.
+```text
+429 Too Many Requests
+```
 
-Emergency Simulation – Siren and alerts on critical events.
-Blockchain/IPFS Simulation – Stores event CID & transaction hash.
+### Solution
+Implemented:
+- Offline AI fallback mode
+- Graceful error handling
+- Simulated AI responses during demo
 
-Chart Trends – Seizure frequency and risk score trends over time.
+This ensured the application remained demo-ready even under API limits.
 
-Hackathon-friendly UI – Phone-like layout with zoom for recording walkthroughs.
+---
 
-/frontend
-  index.html         # Main UI page
-  style.css          # Styling with responsive phone-frame and dashboard
-  app.js             # Logic for AI, voice, dashboard, wallet & siren
-  /assets
-    siren.wav        # Emergency sound
-/backend
-  index.js           # Node/Express server for AI simulation
-  services/
-    ai.js            # Gemini AI integration
-  package.json
-/contracts
-  EventLogger.sol    # Sample Mantle Testnet contract
-README.md
+## 4️⃣ UI Scaling Problems
 
-Setup & Installation
-Backend (AI Simulator)
+### Problem
+The UI was too zoomed in for video presentation.
+
+### Solution
+Optimized:
+- Phone frame scaling
+- Scroll flow
+- Dashboard sizing
+- Chat sizing
+
+Result:
+A cleaner cinematic hackathon demo experience.
+
+---
+
+## 5️⃣ Emergency Workflow Realism
+
+### Problem
+Needed a stronger emotional impact for judges.
+
+### Solution
+Added:
+- Emergency flashing mode
+- Siren sound effects
+- Live GPS simulation
+- Critical response UI animations
+
+---
+
+# 🌐 Mantle Testnet Setup
+
+## Add Mantle Network to MetaMask
+
+### Network Details
+
+```text
+Network Name: Mantle Testnet
+RPC URL: https://rpc.testnet.mantle.xyz
+Chain ID: 5001
+Currency Symbol: MNT
+Block Explorer: https://explorer.testnet.mantle.xyz
+```
+
+---
+
+# 🧪 Running Locally
+
+## 1️⃣ Clone Repo
+
+```bash
+git clone https://github.com/YOUR_USERNAME/neurocare-ai.git
+```
+
+---
+
+## 2️⃣ Install Backend
+
+```bash
 cd backend
 npm install
+```
+
+---
+
+## 3️⃣ Create `.env`
+
+```env
+GEMINI_API_KEY=your_api_key
+```
+
+---
+
+## 4️⃣ Start Backend
+
+```bash
 node index.js
-# Runs on http://localhost:4000
-The backend provides an endpoint for AI insights and CID/transaction simulation.
+```
 
-Frontend
-cd frontend
-# Open index.html directly in browser or deploy via Netlify
-Ensure MetaMask is installed in your browser.
+---
 
-Test voice logging and quick-send buttons.
+## 5️⃣ Start Frontend
 
-Siren will trigger on seizure events.
+Open:
 
-MetaMask & Mantle Testnet
-Install MetaMask: https://metamask.io/
+```text
+index.html
+```
 
-Connect to Mantle Testnet
+Or use:
+- VSCode Live Server
 
-Get test MNT from Mantle Faucet
+---
 
-Click Connect Wallet in the app.
+# 🚀 Netlify Deployment
 
-Trigger events to simulate on-chain logging.
+## Frontend Deployment
+
+1. Push project to GitHub
+2. Login to Netlify
+3. Import GitHub repository
+4. Deploy site
+
+Result:
+- Public hackathon demo URL
+
+---
+
+# 🎬 Demo Walkthrough
+
+The demo video showcases:
+
+✅ MetaMask wallet connection  
+✅ Voice logging  
+✅ AI severity analysis  
+✅ Emergency siren activation  
+✅ Live dashboard updates  
+✅ Blockchain transaction simulation  
+✅ Analytics chart updates  
+✅ Real-time healthcare workflow  
+
+---
+
+# 📦 Future Improvements
+
+Planned upgrades:
+- Real Mantle smart contracts
+- Real IPFS uploads
+- Live hospital API integration
+- Caregiver SMS notifications
+- AI predictive seizure analysis
+- Wearable device integration
+- Real decentralized medical storage
+
+---
 
 
 
+# 🤝 Open Source
+
+This project is open-source and built for educational and hackathon innovation purposes.
+
+---
+
+# 👨‍💻 Author
+
+### Ibe Ezenwa Augustine
+### Contact email: austinibe15@gmail.com
+
+AI × Web3 Builder  
+Healthcare Innovation Enthusiast  
+Hackathon Developer
+
+---
 
 
+# 💡 Final Vision
 
->>>>>>> 25bf323b117029f38ab70a85dd74ee873d6f90a2
+NeuroCare AI demonstrates the future intersection of:
+
+- Artificial Intelligence
+- Emergency healthcare systems
+- Decentralized infrastructure
+- Real-time agentic workflows
+- Human-centered AI interfaces
+
+> Building intelligent healthcare systems that can save lives in real time.
