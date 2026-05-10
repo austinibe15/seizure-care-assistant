@@ -1,0 +1,24 @@
+{
+  "name": "seizure-care-assistant-backend",
+  "version": "1.0.0",
+  "description": "Backend for Seizure Care Assistant (lightweight demo version)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "health",
+    "epilepsy",
+    "assistant",
+    "demo"
+  ],
+  "author": "Austin Ibe",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2"
+  }
+}

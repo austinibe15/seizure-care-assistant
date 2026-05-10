@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "hardhat": "^3.4.4"
+  },
+  "type": "module"
+}

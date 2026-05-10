@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeuroCare AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="phone-frame">
+
+  <div class="phone-notch"></div>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div>
+        <h1>🧠 NeuroCare AI</h1>
+        <p>Emergency Monitoring System</p>
+      </div>
+      <div class="pulse-circle"></div>
+    </div>
+
+    <!-- AI STATUS PILL -->
+    <div class="ai-pill">🤖 AI ACTIVE</div>
+
+    <!-- STATUS -->
+    <div class="status-card">
+      <div>
+        <h2>Patient Status</h2>
+        <p id="liveStatus">Stable</p>
+      </div>
+      <div class="risk">
+        <span>Risk</span>
+        <h1 id="riskScore">0</h1>
+      </div>
+    </div>
+
+    <!-- GPS -->
+    <div class="gps-card">
+      <div>📍 <span id="gpsText">GPS Ready</span></div>
+      <div class="gps-dot"></div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+      <div class="card"><span>⚠️</span><h3 id="seizureCount">0</h3><p>Seizures</p></div>
+      <div class="card"><span>💊</span><h3 id="medCount">0</h3><p>Medication</p></div>
+      <div class="card"><span>🩺</span><h3 id="symptomCount">0</h3><p>Symptoms</p></div>
+      <div class="card"><span>🚑</span><h3 id="alertCount">0</h3><p>Alerts</p></div>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-card">
+      <canvas id="healthChart"></canvas>
+    </div>
+
+    <!-- CHAT -->
+    <div id="chat" class="chat"></div>
+
+    <!-- TYPING INDICATOR -->
+    <div id="typing" class="typing" style="display:none;">
+      🤖 NeuroCare AI is analyzing...
+    </div>
+
+    <!-- VOICE -->
+    <div id="voiceStatus" class="voice-status">🎤 Listening...</div>
+
+    <!-- EMERGENCY -->
+    <div id="emergencyBox" class="emergency-box">
+      🚨 EMERGENCY ALERT ACTIVE
+      <p>Caregiver & nearest hospital notified</p>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="quick-actions">
+      <button onclick="quickSend('I had a seizure and collapsed')">⚠️ Seizure</button>
+      <button onclick="quickSend('I took my medication this morning')">💊 Medication</button>
+      <button onclick="quickSend('I feel dizzy and weak')">🩺 Symptom</button>
+    </div>
+
+    <!-- WALLET CONNECT BUTTON -->
+    <div class="wallet-connect">
+      <button onclick="connectWallet()">Connect Wallet</button>
+      <p id="walletAddress"></p>
+    </div>
+
+    <!-- INPUT -->
+    <div class="input-bar">
+      <input id="msg" type="text" placeholder="Describe medical situation..." />
+      <button class="mic-btn" onclick="startVoice()">🎤</button>
+      <button onclick="send()">➤</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Siren Audio -->
+<audio id="sirenAudio" src="assets/siren.wav" preload="auto"></audio>
+
+<!-- MAIN SCRIPT -->
+<script src="app.js"></script>
+<script>
+  // MetaMask wallet connection
+  async function connectWallet() {
+    if (window.ethereum) {
+      try {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        console.log("Connected account:", accounts[0]);
+        document.getElementById('walletAddress').innerText = `Wallet: ${accounts[0]}`;
+      } catch (err) {
+        console.error(err);
+        alert("Connection rejected!");
+      }
+    } else {
+      alert("MetaMask not found! Install it first.");
+    }
+  }
+
+  // Play siren on seizure button click
+  const quickButtons = document.querySelectorAll('.quick-actions button');
+  quickButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.textContent.includes('Seizure')) {
+        const siren = document.getElementById('sirenAudio');
+        siren.currentTime = 0;
+        siren.play();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

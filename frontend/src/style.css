@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  transform: scale(1.1); /* Zoom in for video walkthrough */
+  transform-origin: top center;
+}
+
+/* PHONE */
+.phone-frame {
+  width: 380px; /* slightly smaller to fit more on screen */
+  height: 700px; /* slightly shorter */
+  background: #000;
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+.phone-notch {
+  width: 140px;
+  height: 28px;
+  background: #111;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* APP */
+.app {
+  height: 100%;
+  border-radius: 32px;
+  padding: 20px 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0f172a, #111827);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+.header p {
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* PULSE */
+.pulse-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.6); }
+  100% { transform: scale(1); }
+}
+
+/* STATUS */
+.status-card {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.risk h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+/* GPS */
+.gps-card {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.gps-dot {
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+/* DASHBOARD */
+.dashboard {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.card span { font-size: 20px; }
+.card h3 { margin: 8px 0 4px; font-size: 22px; }
+.card p { margin: 0; color: #94a3b8; font-size: 11px; }
+
+/* CHART */
+.chart-card {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+  padding: 12px;
+}
+
+/* CHAT */
+.chat {
+  margin-top: 12px;
+  height: 140px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bubble {
+  padding: 10px;
+  border-radius: 14px;
+  max-width: 85%;
+  font-size: 12px;
+  white-space: pre-line;
+  line-height: 1.4;
+}
+.user { background: #2563eb; align-self: flex-end; }
+.bot { background: #1e293b; align-self: flex-start; }
+.system { background: #dc2626; font-weight: bold; }
+
+/* EMERGENCY */
+.emergency-box {
+  display: none;
+  margin-top: 8px;
+  background: #dc2626;
+  padding: 12px;
+  border-radius: 14px;
+  text-align: center;
+  animation: pulse 1s infinite;
+}
+.emergency-box p { margin-bottom: 0; }
+
+/* AI */
+.typing {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #94a3b8;
+  display: none;
+}
+
+/* VOICE */
+.voice-status {
+  display: none;
+  margin-top: 6px;
+  color: #22c55e;
+  font-size: 11px;
+}
+
+/* ACTIONS */
+.quick-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.quick-actions button {
+  flex: 1;
+  border: none;
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  font-size: 10px;
+}
+
+/* INPUT */
+.input-bar {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+.input-bar input {
+  flex: 1;
+  border: none;
+  border-radius: 14px;
+  padding: 12px;
+  background: #1e293b;
+  color: white;
+  outline: none;
+}
+.input-bar button {
+  width: 50px;
+  border: none;
+  border-radius: 14px;
+  background: #2563eb;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+.mic-btn { background: #dc2626 !important; }
+
+/* ALERT MODE */
+.alert-mode { animation: emergencyFlash 0.5s infinite; }
+@keyframes emergencyFlash {
+  0% { background: #111827; }
+  50% { background: #450a0a; }
+  100% { background: #111827; }
+}
+
+/* AI STATUS PILL */
+.ai-pill {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #1e293b;
+  border-radius: 12px;
+  font-size: 11px;
+  text-align: center;
+}
